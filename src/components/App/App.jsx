@@ -5,11 +5,11 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
 //importing the components I will need to access 
-import Comments from '../Comments/Comments';
-import Feelings from '..Feelings/Feelings';
-import Home from '../Home/Home';
-import Support from '../Supported/Supported';
-import Understanding from '../Understanding/Understanding';
+// import Comments from '../Comments/Comments';
+// import Feelings from '..Feelings/Feelings';
+// import Home from '../Home/Home';
+// import Support from '../Supported/Supported';
+// import Understanding from '../Understanding/Understanding';
 
 
 
@@ -39,30 +39,31 @@ return (
       <h1 className='App-title'>Feedback!</h1>
       <h4>Don't forget it!</h4>
     </header>
-    <Router>
-      <Route exact path ="/">
-        {/* <Home /> */}
-      </Route>
-      <Route exact path ="/">
-        {/* <Feeling /> */}
-      </Route>
-      <Route exact path ="/">
-        {/* <Understanding /> */}
-      </Route>
-      <Route exact path ="/">
-        {/* <Supported /> */}
-      </Route>
-      <Route exact path ="/">
-        {/* <Comments /> */}
-      </Route>
-      <Route exact path ="/">
-        {/* <Review /> */}
-      </Route>
-      <Route exact path ="/">
-        {/* <Submit /> */}
-      </Route>
-    </Router>
+
   </div>
+    // {/* <Router>
+    //   <Route exact path ="/">
+    //     {/* <Home /> */}
+    //   </Route>
+    //   <Route exact path ="/">
+    //     {/* <Feeling /> */}
+    //   </Route>
+    //   <Route exact path ="/">
+    //     {/* <Understanding /> */}
+    //   </Route>
+    //   <Route exact path ="/">
+    //     {/* <Supported /> */}
+    //   </Route>
+    //   <Route exact path ="/">
+    //     {/* <Comments /> */}
+    //   </Route>
+    //   <Route exact path ="/">
+    //     {/* <Review /> */}
+    //   </Route>
+    //   <Route exact path ="/">
+    //     {/* <Submit /> */}
+    //   </Route>
+    // </Router> */}
 );
 }
 
