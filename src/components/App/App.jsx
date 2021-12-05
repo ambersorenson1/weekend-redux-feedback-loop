@@ -7,7 +7,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 //importing the components I will need to access 
 // import Comments from '../Comments/Comments';
 // import Feelings from '..Feelings/Feelings';
-// import Home from '../Home/Home';
+ import Home from '../Home/Home';
 // import Support from '../Supported/Supported';
 // import Understanding from '../Understanding/Understanding';
 
