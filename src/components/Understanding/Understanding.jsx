@@ -11,9 +11,9 @@ function Understanding(){
 
 
 return (
-<section>
-      <header>
-        <h1> How well did you understand today's material?</h1>
+<div className='App'>
+      <header className='App-header'>
+        <h1 className='App-title'>How well did you understand today's material?</h1>
         <input
         type="number"
         required
@@ -23,7 +23,7 @@ return (
         </input>
         <button>Next</button>
       </header>
-     </section>
+     </div>
 )
 
 }

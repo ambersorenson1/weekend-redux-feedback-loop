@@ -5,10 +5,10 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
 //importing the components I will need to access 
-// import Comments from '../Comments/Comments';
+import Comments from '../Comments/Comments';
 import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling'
-// import Support from '../Supported/Supported';
+import Supported from '../Supported/Supported';
 import Understanding from '../Understanding/Understanding';
 
 
@@ -39,7 +39,8 @@ return (
     <Home />
     <Feeling />
     <Understanding />
-
+    <Supported />
+    <Comments />
   </div>
 );
 }

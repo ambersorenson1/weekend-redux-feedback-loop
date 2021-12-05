@@ -27,9 +27,9 @@ function Feeling (){
 //      }
 //   }
    return (
-     <section>
-      <header>
-        <h1> How are you feeling today?</h1>
+     <div className='App'>
+      <header className='App-header'>
+        <h1 className='App-title'> How are you feeling today?</h1>
         <input
         type="number"
         required
@@ -39,7 +39,7 @@ function Feeling (){
         </input>
         <button>Next</button>
       </header>
-     </section>
+     </div>
    )
  }
 
