@@ -1,5 +1,4 @@
 import React from "react";
-import axios from 'axios';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -8,8 +7,27 @@ import { useHistory } from "react-router-dom";
 function Comments(){
   console.log('in Comments');
   const [comments, setComments] = useState('');
+  const dispatch = useDispatch();
+  const history = useHistory();
+  
+    const handleComments = (event) => {
+      event.preventDefault();
+      if(comments === ''){
+        alert('Please choose a number from 1-5 to continue')
+      }else if (comments >5){
+        alert('Please choose a number from 1-5 to continue')
+      }else {
+        dispatch({
+          type: 'SET_COMMENTS',
+          payload: comments
+        })
+        history.push('/submit');
+       }
+    }
 
 
+
+ 
 return (
 <div className='App'>
       <header className='App-header'>
@@ -20,7 +38,7 @@ return (
         value={comments}
         onChange={(event) => setComments(event.target.value)}>
         </input>
-        <button>Next</button>
+        <button onClick={handleComments}>Next</button>
       </header>
      </div>
 )

@@ -36,11 +36,29 @@ return (
       <h1 className='App-title'>Feedback!</h1>
       <h4>Don't forget it!</h4>
     </header>
-    <Home />
-    <Feeling />
-    <Understanding />
-    <Supported />
-    <Comments />
+    <Router>
+    <Route exact path ="/">
+      <Home /> 
+    </Route>
+    <Route>
+      <Feeling /> 
+    </Route>
+    <Route>
+      <Understanding /> 
+    </Route>
+    <Route>
+      <Supported /> 
+    </Route>
+    <Route>
+      <Comments /> 
+    </Route>
+    {/* <Route path ="/">
+      // {/* <Submit />  */}
+    {/* </Route> */}
+    <p>
+      <Link to="/">Home</Link>
+    </p>
+</Router> 
   </div>
 );
 }

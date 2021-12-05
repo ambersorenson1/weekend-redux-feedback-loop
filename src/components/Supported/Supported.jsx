@@ -1,5 +1,4 @@
 import React from "react";
-import axios from 'axios';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -8,6 +7,24 @@ import { useHistory } from "react-router-dom";
 function Supported(){
   console.log('in Supported');
   const [supported, setSupported] = useState('');
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+
+  const handleSupported = (event) => {
+    event.preventDefault();
+    if(supported === ''){
+      alert('Please choose a number from 1-5 to continue')
+    }else if (supported >5){
+      alert('Please choose a number from 1-5 to continue')
+    }else {
+      dispatch({
+        type: 'SET_SUPPORTED',
+        payload: supported
+      })
+      history.push('/comments')
+     }
+  }
 
 
 return (
@@ -21,7 +38,7 @@ return (
         value={supported}
         onChange={(event) => setSupported(event.target.value)}>
         </input>
-        <button>Next</button>
+        <button onClick={handleSupported}>Next</button>
       </header>
      </div>
 )

@@ -12,15 +12,15 @@ function Home(){
    const [feedback, setFeedback] = useState ('');
 
 
-// function getHomeFeedback() {
-//   dispatch({
-//     type: 'SURVEY_INFO',
-//     payload: survey
-//   })
-//   function readyToStartSurvey () {
-//     history.push('/feeling')
-//   }
-// }
+function getHomeFeedback() {
+  dispatch({
+    type: 'SURVEY_INFO',
+    payload: survey
+  })
+  function readyToStartSurvey () {
+    history.push('/feeling')
+  }
+}
 
 return (
   <section>
