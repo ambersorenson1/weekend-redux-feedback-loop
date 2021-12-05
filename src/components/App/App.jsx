@@ -37,24 +37,24 @@ return (
       <h4>Don't forget it!</h4>
     </header>
     <Router>
-    <Route>
+    <Route path ="/">
       <Home /> 
     </Route>
-    <Route>
+    <Route exact path ="/feeling">
       <Feeling /> 
     </Route>
-    <Route>
+    <Route exact path ="/understanding">
       <Understanding /> 
     </Route>
-    <Route>
+    <Route exact path ="/supported">
       <Supported /> 
     </Route>
-    <Route>
+    <Route exact path ="/comments">
       <Comments /> 
     </Route>
-    {/* <Route path ="/">
-      // {/* <Submit />  */}
-    {/* </Route> */}
+    <Route exact path ="/">
+      {/* <Submit />  */}
+    </Route>
     <p>
       <Link to="/">Home</Link>
     </p>

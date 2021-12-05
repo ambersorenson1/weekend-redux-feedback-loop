@@ -10,6 +10,7 @@ function Home(){
    const dispatch = useDispatch();
 
    const [feedback, setFeedback] = useState ('');
+   const [home, setHome] = useState ('');
 
    useEffect(() => {
     getFeedback();
@@ -26,15 +27,24 @@ function Home(){
     });
   }
   function readyToStartSurvey () {
+    dispatch ({
+      type: "SET_HOME",
+      payload: home
+    })
     history.push('/feeling')
   }
 
 
 return (
-  <section>
-    <h1>Welcome to Prime Reviews!! Please click the button below to start the survey!</h1>
-    <button onClick={getFeedback}>Start Here</button>
-  </section>
+  <div className='App'>
+    <header className='App-header'>
+      <h1 className='App-title'>Welcome to Prime Reviews!! Please click the button below to start the survey!</h1>
+    </header>
+    <button 
+    value={feedback}
+    onClick={readyToStartSurvey}
+    onChange={(event) => setFeedback(event.target.value)}>Start Here</button>
+  </div>
 )
 
 }
