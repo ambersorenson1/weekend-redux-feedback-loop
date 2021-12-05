@@ -6,31 +6,28 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 //importing the components I will need to access 
 // import Comments from '../Comments/Comments';
-// import Feelings from '..Feelings/Feelings';
- import Home from '../Home/Home';
+import Home from '../Home/Home';
+import Feeling from '../Feeling/Feeling'
 // import Support from '../Supported/Supported';
-// import Understanding from '../Understanding/Understanding';
+import Understanding from '../Understanding/Understanding';
 
 
 
 function App() {
 
 const  getFeedback = () => {
-  axios({
-    method: "GET",
-    url: "/api/feedback",
-  })
-    .then((response) => {
-      console.log("Feedback Get response:", response.data);
-      dispatch({
-        type: "SET_FEEDBACK",
-        payload: response.data,
-      });
+  axios.get('/api/feedback')
+  .then ((response) => {
+    const action = {
+      type: 'SET_FEEDBACK',
+      payload: response.data
+    }
+    dispatchEvent(action);
+  }).catch( err => {
+      alert('error in GET feedback');
+      console.error(err)
     })
-    .catch((error) => {
-      console.log("/api/feedback GET error:", error);
-    });
-};
+}
 
 
 return (
@@ -39,31 +36,11 @@ return (
       <h1 className='App-title'>Feedback!</h1>
       <h4>Don't forget it!</h4>
     </header>
+    <Home />
+    <Feeling />
+    <Understanding />
 
   </div>
-    // {/* <Router>
-    //   <Route exact path ="/">
-    //     {/* <Home /> */}
-    //   </Route>
-    //   <Route exact path ="/">
-    //     {/* <Feeling /> */}
-    //   </Route>
-    //   <Route exact path ="/">
-    //     {/* <Understanding /> */}
-    //   </Route>
-    //   <Route exact path ="/">
-    //     {/* <Supported /> */}
-    //   </Route>
-    //   <Route exact path ="/">
-    //     {/* <Comments /> */}
-    //   </Route>
-    //   <Route exact path ="/">
-    //     {/* <Review /> */}
-    //   </Route>
-    //   <Route exact path ="/">
-    //     {/* <Submit /> */}
-    //   </Route>
-    // </Router> */}
 );
 }
 
