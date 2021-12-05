@@ -9,11 +9,27 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 
+const feedbackReducer = (state = {}, action) => {
+  switch(action.type){
+    case 'SET_FEELING':
+      return{...state, feeling: action.payload};
+      case 'SET_UNDERSTANDING':
+      return{...state, feeling: action.payload};
+      case 'SET_SUPPORTED':
+      return{...state, feeling: action.payload};
+      case 'SET_COMMENTS':
+      return{...state, feeling: action.payload};
+      default: return state;
+  }
+};
 
 
-
-
-
+const storeInstance = createStore(
+  combineReducers({
+    feedbackReducer
+  }),
+  applyMiddleware(logger)
+);
 
 ReactDOM.render(
   <Provider store={storeInstance}>
