@@ -11,6 +11,7 @@ import Feeling from '../Feeling/Feeling'
 import Supported from '../Supported/Supported';
 import Understanding from '../Understanding/Understanding';
 import Review from '../../Review/Review';
+import Success from '../Success/Success';
 
 
 
@@ -56,8 +57,8 @@ return (
     <Route exact path ="/review">
       <Review /> 
     </Route>
-    <Route exact path ="/">
-      {/* <Submit />  */}
+    <Route exact path ="/success">
+       <Success />  
     </Route>
     <p>
       <Link to="/">Home</Link>
