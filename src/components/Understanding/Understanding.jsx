@@ -6,18 +6,18 @@ import { useHistory } from "react-router-dom";
 
 function Understanding(){
   console.log('in Understanding');
-  const [understand, setUnderstand] = useState('');
+  const [understanding, setUnderstanding] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleUnderstanding = (event) => {
     event.preventDefault();
-    if (understand >= 1 && understand <= 5){
+    if (understanding >= 1 && understanding <= 5){
       dispatch({
-          type: 'SET_UNDERSTAND',
-          payload: understand
+          type: 'SET_UNDERSTANDING',
+          payload: understanding
         })
-        history.push('/supported');
+        history.push('/support');
        }
        else {
         alert('Please enter a value between 1 and 5!')
@@ -31,8 +31,8 @@ return (
         type="number"
         required
         placeholder="Rate on a scale of 1-5"
-        value={understand}
-        onChange={(event) => setUnderstand(event.target.value)}>
+        value={understanding}
+        onChange={(event) => setUnderstanding(event.target.value)}>
         </input>
         <button onClick={handleUnderstanding}>Next</button>
       </header>

@@ -4,19 +4,19 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 
-function Supported(){
-  console.log('in Supported');
-  const [supported, setSupported] = useState('');
+function Support(){
+  console.log('in Support');
+  const [support, setSupport] = useState('');
   const history = useHistory();
   const dispatch = useDispatch();
 
 
-  const handleSupported = (event) => {
+  const handleSupport = (event) => {
     event.preventDefault();
-    if (supported >= 1 && supported <= 5){
+    if (support >= 1 && support <= 5){
       dispatch({
-          type: 'SET_SUPPORTED',
-          payload: supported
+          type: 'SET_SUPPORT',
+          payload: support
         })
         history.push('/comments');
        }
@@ -34,14 +34,14 @@ return (
         type="number"
         required
         placeholder="Rate on a scale of 1-5"
-        value={supported}
-        onChange={(event) => setSupported(event.target.value)}>
+        value={support}
+        onChange={(event) => setSupport(event.target.value)}>
         </input>
-        <button onClick={handleSupported}>Next</button>
+        <button onClick={handleSupport}>Next</button>
       </header>
      </div>
 )
 
 }
 
-export default Supported;
+export default Support;

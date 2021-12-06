@@ -8,7 +8,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Comments from '../Comments/Comments';
 import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling'
-import Supported from '../Supported/Supported';
+import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
 import Review from '../../Review/Review';
 import Success from '../Success/Success';
@@ -39,7 +39,7 @@ return (
       <h4>Don't forget it!</h4>
     </header>
     <Router>
-    <Route path ="/">
+    <Route exact path ="/">
       <Home /> 
     </Route>
     <Route exact path ="/feeling">
@@ -48,8 +48,8 @@ return (
     <Route exact path ="/understanding">
       <Understanding /> 
     </Route>
-    <Route exact path ="/supported">
-      <Supported /> 
+    <Route exact path ="/support">
+      <Support /> 
     </Route>
     <Route exact path ="/comments">
       <Comments /> 

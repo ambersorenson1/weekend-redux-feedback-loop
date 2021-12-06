@@ -6,6 +6,7 @@ import axios from "axios";
 function Review() {
   console.log('in review');
   const feedbackReducer = useSelector ((store) => store.feedbackReducer);
+  console.log(feedbackReducer);
   const history = useHistory();
     const handleReducerPost = () => {
       console.log('in handleReducerPost');
@@ -28,7 +29,7 @@ function Review() {
       <h1 className='App-title'> Please review your feedback</h1>
       <p>{feedbackReducer.feeling}</p>
       <p>{feedbackReducer.understanding}</p>
-      <p>{feedbackReducer.supported}</p>
+      <p>{feedbackReducer.support}</p>
       <p>{feedbackReducer.comments}</p>
       <button onClick={handleReducerPost}>Submit</button>
     </header>
