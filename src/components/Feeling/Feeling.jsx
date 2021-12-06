@@ -13,16 +13,15 @@ function Feeling (){
 
   const handleFeeling = (event) => {
     event.preventDefault();
-    if(feeling === ''){
-      alert('Please choose a number from 1-5 to continue')
-    }else if (feeling >5){
-      alert('Please choose a number from 1-5 to continue')
-    }else {
-      dispatch({
+    if (feeling >= 1 && feeling <= 5){
+    dispatch({
         type: 'SET_FEELING',
         payload: feeling
       })
-      history.push('/understanding')
+      history.push('/understanding');
+     }
+     else {
+      alert('Please enter a value between 1 and 5!')
      }
   }
    return (

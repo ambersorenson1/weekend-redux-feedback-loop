@@ -13,18 +13,17 @@ function Supported(){
 
   const handleSupported = (event) => {
     event.preventDefault();
-    if(supported === ''){
-      alert('Please choose a number from 1-5 to continue')
-    }else if (supported >5){
-      alert('Please choose a number from 1-5 to continue')
-    }else {
+    if (supported >= 1 && supported <= 5){
       dispatch({
-        type: 'SET_SUPPORTED',
-        payload: supported
-      })
-      history.push('/comments')
-     }
-  }
+          type: 'SET_SUPPORTED',
+          payload: supported
+        })
+        history.push('/comments');
+       }
+       else {
+        alert('Please enter a value between 1 and 5!')
+       }
+    }
 
 
 return (

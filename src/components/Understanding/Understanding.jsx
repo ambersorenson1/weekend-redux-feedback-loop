@@ -12,18 +12,17 @@ function Understanding(){
 
   const handleUnderstanding = (event) => {
     event.preventDefault();
-    if(understand === ''){
-      alert('Please choose a number from 1-5 to continue')
-    }else if (understand >5){
-      alert('Please choose a number from 1-5 to continue')
-    }else {
+    if (understand >= 1 && understand <= 5){
       dispatch({
-        type: 'SET_UNDERSTAND',
-        payload: understand
-      })
-      history.push('/supported');
-     }
-  }
+          type: 'SET_UNDERSTAND',
+          payload: understand
+        })
+        history.push('/supported');
+       }
+       else {
+        alert('Please enter a value between 1 and 5!')
+       }
+    }
 return (
 <div className='App'>
       <header className='App-header'>

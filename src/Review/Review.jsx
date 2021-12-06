@@ -5,8 +5,23 @@ import axios from "axios";
 
 function Review() {
   console.log('in review');
-  const feedbackReducer = useSelector (state => state.feedbackReducer);
+  const feedbackReducer = useSelector ((store) => store.feedbackReducer);
   const history = useHistory();
+    const handleReducerPost = () => {
+      console.log('in handleReducerPost');
+      axios({
+        method: 'POST',
+        url: '/api/feedback',
+        data: {
+          feedbackReducer
+        },
+      }).then((response) =>{
+        console.log('sending the data', response);
+        history.push('/success')
+      }).catch(function (error) {
+        console.log('error posting the information', error);
+      });
+    }
  
   
 
@@ -20,6 +35,7 @@ function Review() {
       <p>{feedbackReducer.understanding}</p>
       <p>{feedbackReducer.supported}</p>
       <p>{feedbackReducer.comments}</p>
+      <button onClick={handleReducerPost}>Submit</button>
     </header>
     </div>
   )
