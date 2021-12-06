@@ -21,7 +21,7 @@ function Comments(){
           type: 'SET_COMMENTS',
           payload: comments
         })
-        history.push('/submit');
+        history.push('/review');
        }
     }
 

@@ -10,6 +10,7 @@ import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling'
 import Supported from '../Supported/Supported';
 import Understanding from '../Understanding/Understanding';
+import Review from '../../Review/Review';
 
 
 
@@ -51,6 +52,9 @@ return (
     </Route>
     <Route exact path ="/comments">
       <Comments /> 
+    </Route>
+    <Route exact path ="/review">
+      <Review /> 
     </Route>
     <Route exact path ="/">
       {/* <Submit />  */}
