@@ -9,14 +9,9 @@ function Review() {
   const history = useHistory();
     const handleReducerPost = () => {
       console.log('in handleReducerPost');
-      axios({
-        method: 'POST',
-        url: '/api/feedback',
-        data: {
-          feedbackReducer
-        },
-      }).then((response) =>{
-        console.log('sending the data', response);
+      axios.post('api/feedback', feedbackReducer
+      ).then((response) =>{
+        console.log('storing the data', response);
         history.push('/success')
       }).catch(function (error) {
         console.log('error posting the information', error);
