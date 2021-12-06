@@ -12,18 +12,13 @@ function Comments(){
   
     const handleComments = (event) => {
       event.preventDefault();
-      if(comments === ''){
-        alert('Please choose a number from 1-5 to continue')
-      }else if (comments >5){
-        alert('Please choose a number from 1-5 to continue')
-      }else {
         dispatch({
           type: 'SET_COMMENTS',
           payload: comments
         })
         history.push('/review');
        }
-    }
+
 
 
 
